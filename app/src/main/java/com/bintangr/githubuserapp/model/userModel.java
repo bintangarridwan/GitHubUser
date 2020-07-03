@@ -10,14 +10,14 @@ public class userModel implements Parcelable {
     int avatar;
     String company;
     String location;
-    int repository;
+    String repository;
     int follower;
     int following;
 
     public userModel() {
     }
 
-    public userModel(String username, String name, int avatar, String company, String location, int repository, int follower, int following) {
+    public userModel(String username, String name, int avatar, String company, String location, String repository, int follower, int following) {
         this.username = username;
         this.name = name;
         this.avatar = avatar;
@@ -68,11 +68,11 @@ public class userModel implements Parcelable {
         this.location = location;
     }
 
-    public int getRepository() {
+    public String getRepository() {
         return repository;
     }
 
-    public void setRepository(int repository) {
+    public void setRepository(String repository) {
         this.repository = repository;
     }
 
@@ -105,7 +105,7 @@ public class userModel implements Parcelable {
         dest.writeInt(this.avatar);
         dest.writeString(this.company);
         dest.writeString(this.location);
-        dest.writeInt(this.repository);
+        dest.writeString(this.repository);
         dest.writeInt(this.follower);
         dest.writeInt(this.following);
     }
@@ -116,7 +116,7 @@ public class userModel implements Parcelable {
         this.avatar = in.readInt();
         this.company = in.readString();
         this.location = in.readString();
-        this.repository = in.readInt();
+        this.repository = in.readString();
         this.follower = in.readInt();
         this.following = in.readInt();
     }
